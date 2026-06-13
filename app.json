@@ -1,0 +1,48 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/fresh/fresh",
+    "pages/history/history",
+    "pages/profile/profile",
+    "pages/feedback/feedback"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#FF9966",
+    "navigationBarTitleText": "今天吃什么",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#666666",
+    "selectedColor": "#FF9966",
+    "backgroundColor": "#FFFFFF",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/tab-home.png",
+        "selectedIconPath": "images/tab-home.png"
+      },
+      {
+        "pagePath": "pages/fresh/fresh",
+        "text": "尝尝鲜",
+        "iconPath": "images/tab-fresh.png",
+        "selectedIconPath": "images/tab-fresh.png"
+      },
+      {
+        "pagePath": "pages/history/history",
+        "text": "回头客",
+        "iconPath": "images/tab-history.png",
+        "selectedIconPath": "images/tab-history.png"
+      },
+      {
+        "pagePath": "pages/profile/profile",
+        "text": "个人中心",
+        "iconPath": "images/tab-profile.png",
+        "selectedIconPath": "images/tab-profile.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

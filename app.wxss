@@ -1,0 +1,127 @@
+/* 全局样式 */
+page {
+  font-family: 'PingFang SC', 'Helvetica Neue', Arial, sans-serif;
+  background-color: #F8F8F8;
+  color: #333333;
+}
+
+/* 暖色调主题 */
+.primary-color {
+  color: #FF9966;
+}
+
+.primary-bg {
+  background-color: #FF9966;
+}
+
+/* 统一间距 */
+.mt-10 { margin-top: 10rpx; }
+.mt-20 { margin-top: 20rpx; }
+.mt-30 { margin-top: 30rpx; }
+
+.mb-10 { margin-bottom: 10rpx; }
+.mb-20 { margin-bottom: 20rpx; }
+.mb-30 { margin-bottom: 30rpx; }
+
+.ml-10 { margin-left: 10rpx; }
+.ml-20 { margin-left: 20rpx; }
+
+.mr-10 { margin-right: 10rpx; }
+.mr-20 { margin-right: 20rpx; }
+
+/* 统一字体大小 */
+.text-xs { font-size: 24rpx; }
+.text-sm { font-size: 28rpx; }
+.text-base { font-size: 32rpx; }
+.text-lg { font-size: 36rpx; }
+.text-xl { font-size: 40rpx; }
+
+/* 按钮样式 */
+.btn-primary {
+  background-color: #FF9966;
+  color: white;
+  border-radius: 8rpx;
+  padding: 20rpx;
+  text-align: center;
+  font-size: 32rpx;
+}
+
+.btn-secondary {
+  background-color: #FFFFFF;
+  color: #FF9966;
+  border: 2rpx solid #FF9966;
+  border-radius: 8rpx;
+  padding: 20rpx;
+  text-align: center;
+  font-size: 32rpx;
+}
+
+/* 卡片样式 */
+.card {
+  background-color: white;
+  border-radius: 12rpx;
+  padding: 24rpx;
+  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.1);
+  margin-bottom: 20rpx;
+}
+
+/* 加载状态 */
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100rpx 0;
+}
+
+/* 空状态 */
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 100rpx 0;
+  color: #999999;
+}
+
+/* 网络异常提示 */
+.network-error {
+  background-color: #FFF3E0;
+  color: #FF9800;
+  padding: 16rpx;
+  text-align: center;
+  margin-bottom: 20rpx;
+}
+
+/* 弹窗遮罩层 */
+.modal-overlay,
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* 弹窗按钮 */
+.btn-cancel {
+  background-color: #F5F5F5;
+  color: #666666;
+  border: none;
+  border-radius: 8rpx;
+  padding: 20rpx;
+  font-size: 32rpx;
+}
+
+.btn-confirm {
+  background-color: #FF9966;
+  color: white;
+  border: none;
+  border-radius: 8rpx;
+  padding: 20rpx;
+  font-size: 32rpx;
+}
