@@ -1,0 +1,58 @@
+<view class="container">
+  <!-- Logo -->
+  <view class="logo">
+    <text class="logo-text">今天吃什么</text>
+  </view>
+  
+  <!-- 今日推荐 -->
+  <view class="card">
+    <view class="section-title">
+      <text class="text-lg">今日推荐</text>
+    </view>
+    <view class="recommend-list" wx:if="{{recommendList.length > 0}}">
+      <view class="recommend-item" wx:for="{{recommendList}}" wx:key="index">
+        <image class="food-image" src="{{item.pic}}"></image>
+        <text class="text-base">{{item.name}}</text>
+      </view>
+    </view>
+    <view class="empty" wx:else>
+      <text>加载中...</text>
+    </view>
+  </view>
+  
+  <!-- 随机转盘 -->
+  <view class="card">
+    <view class="section-title">
+      <text class="text-lg">随心点</text>
+    </view>
+    <view class="turntable">
+      <view class="turntable-circle" bindtap="startTurntable">
+        <text class="turntable-text">吃什么呢？</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 自定义弹窗 -->
+<view class="modal-overlay" wx:if="{{showModal}}" bindtap="hideModal">
+  <view class="modal-content" catchtap="stopPropagation">
+    <view class="modal-header">
+      <text class="modal-title">今日推荐</text>
+    </view>
+    
+    <view class="modal-body">
+      <view class="food-info">
+        <image wx:if="{{randomFoodImage}}" class="food-preview-image" src="{{randomFoodImage}}"></image>
+        <view class="food-text">
+          <text class="food-label">今天就吃：</text>
+          <text class="food-name">{{randomFoodName}}</text>
+        </view>
+      </view>
+    </view>
+    
+    <view class="modal-footer">
+      <button class="btn-cancel" bindtap="cancelModal">换一个</button>
+      <button class="btn-confirm" bindtap="confirmModal">好的</button>
+    </view>
+  </view>
+</view>

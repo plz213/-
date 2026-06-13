@@ -1,0 +1,158 @@
+.container {
+  padding: 20rpx;
+}
+
+.logo {
+  text-align: center;
+  margin: 40rpx 0;
+}
+
+.logo-text {
+  font-size: 48rpx;
+  font-weight: bold;
+  color: #FF9966;
+}
+
+.section-title {
+  margin-bottom: 20rpx;
+}
+
+.recommend-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16rpx;
+}
+
+.recommend-item {
+  display: flex;
+  align-items: center;
+  gap: 40rpx;
+  padding: 20rpx;
+  background-color: #FFF8F0;
+  border-radius: 8rpx;
+}
+
+.food-image {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 8rpx;
+}
+
+.turntable {
+  display: flex;
+  justify-content: center;
+  margin: 40rpx 0;
+}
+
+.turntable-circle {
+  width: 300rpx;
+  height: 300rpx;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #FF9966, #FF5E62);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 36rpx;
+  font-weight: bold;
+  box-shadow: 0 4rpx 12rpx rgba(255, 153, 102, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.turntable-circle:active {
+  transform: scale(0.95);
+}
+
+.modal-content {
+  width: 85%;
+  max-width: 480rpx;
+  background-color: white;
+  border-radius: 20rpx;
+  box-shadow: 0 12rpx 48rpx rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+}
+
+.modal-header {
+  padding: 32rpx 24rpx;
+  text-align: center;
+  border-bottom: 1rpx solid #F5F5F5;
+  background: linear-gradient(135deg, #FF9966 0%, #FF5E62 100%);
+}
+
+.modal-title {
+  font-size: 34rpx;
+  font-weight: bold;
+  color: white;
+}
+
+.modal-body {
+  padding: 32rpx 24rpx;
+  background-color: #FAFAFA;
+}
+
+.food-info {
+  display: flex;
+  align-items: center;
+  gap: 24rpx;
+  background-color: white;
+  padding: 24rpx;
+  border-radius: 12rpx;
+  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.05);
+}
+
+.food-preview-image {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 12rpx;
+  object-fit: cover;
+  border: 2rpx solid #F0F0F0;
+}
+
+.food-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8rpx;
+}
+
+.food-label {
+  font-size: 24rpx;
+  color: #999999;
+}
+
+.food-name {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333333;
+  line-height: 1.4;
+}
+
+.modal-footer {
+  display: flex;
+  border-top: 1rpx solid #F5F5F5;
+  background-color: white;
+}
+
+.modal-footer button {
+  flex: 1;
+  padding: 28rpx 24rpx;
+  background-color: transparent;
+  border: none;
+  font-size: 30rpx;
+  font-weight: 500;
+}
+
+.modal-footer .btn-cancel {
+  color: #666666;
+  border-right: 1rpx solid #F5F5F5;
+  background-color: transparent;
+  border-radius: 0;
+  padding: 28rpx 24rpx;
+}
+
+.modal-footer .btn-confirm {
+  color: #FF9966;
+  background-color: transparent;
+  border-radius: 0;
+  padding: 28rpx 24rpx;
+}

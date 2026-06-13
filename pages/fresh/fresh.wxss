@@ -1,0 +1,88 @@
+.filter-bar {
+  background-color: white;
+  border-radius: 12rpx;
+  padding: 20rpx;
+  margin-bottom: 20rpx;
+  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.1);
+}
+
+.filter-section {
+  margin-bottom: 20rpx;
+}
+
+.filter-section:last-child {
+  margin-bottom: 0;
+}
+
+.filter-title {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #333333;
+  margin-bottom: 16rpx;
+  display: block;
+}
+
+.filter-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16rpx;
+}
+
+.filter-option {
+  background-color: #F0F0F0;
+  color: #666666;
+  padding: 12rpx 24rpx;
+  border-radius: 24rpx;
+  font-size: 24rpx;
+}
+
+.filter-option.active {
+  background-color: #FF9966;
+  color: white;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 20rpx;
+  margin-bottom: 30rpx;
+}
+
+.action-buttons button {
+  flex: 1;
+}
+
+.result-card {
+  background-color: white;
+  border-radius: 12rpx;
+  padding: 20rpx;
+  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.1);
+}
+
+.result-image {
+  width: 100%;
+  height: 300rpx;
+  border-radius: 8rpx;
+  margin-bottom: 20rpx;
+}
+
+.result-name {
+  font-size: 36rpx;
+  font-weight: bold;
+  margin-bottom: 16rpx;
+  color: #333333;
+}
+
+.result-description {
+  font-size: 26rpx;
+  color: #999999;
+  margin-bottom: 16rpx;
+  display: block;
+  line-height: 1.5;
+}
+
+.result-detail {
+  font-size: 28rpx;
+  color: #666666;
+  margin-bottom: 8rpx;
+  display: block;
+}

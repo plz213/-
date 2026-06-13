@@ -1,0 +1,27 @@
+.title {
+  font-size: 36rpx;
+  font-weight: bold;
+  margin-bottom: 20rpx;
+  display: block;
+}
+
+.textarea {
+  width: 100%;
+  height: 300rpx;
+  border: 2rpx solid #F0F0F0;
+  border-radius: 8rpx;
+  padding: 20rpx;
+  font-size: 28rpx;
+  margin-bottom: 20rpx;
+  resize: none;
+}
+
+.anonymous {
+  margin-bottom: 30rpx;
+}
+
+.anonymous text {
+  font-size: 28rpx;
+  color: #666666;
+  margin-left: 10rpx;
+}

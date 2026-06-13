@@ -1,0 +1,39 @@
+<view class="container">
+  <!-- 用户信息 -->
+  <view class="user-info" bindtap="editUserInfo">
+    <image class="avatar" src="{{userInfo.avatarUrl || '/images/头像（未登录）.png'}}"></image>
+    <view class="user-details">
+      <text class="nickname">{{isLogin ? '微信用户' : '点击登录'}}</text>
+      <text class="login-tip">{{isLogin ? '点击修改个人信息' : '未登录'}}</text>
+    </view>
+    <text class="arrow">></text>
+  </view>
+  
+  <!-- 功能列表 -->
+  <view class="menu-list">
+    <view class="menu-item" bindtap="goFeedback">
+      <text class="menu-icon">💬</text>
+      <text class="menu-text">意见反馈</text>
+      <text class="arrow">></text>
+    </view>
+    <view class="menu-item" bindtap="clearCache">
+      <text class="menu-icon">🗑️</text>
+      <text class="menu-text">清除缓存</text>
+      <text class="arrow">></text>
+    </view>
+    <view class="menu-item">
+      <text class="menu-icon">ℹ️</text>
+      <text class="menu-text">关于</text>
+      <text class="arrow">></text>
+    </view>
+  </view>
+  
+  <!-- 版本信息 -->
+  <view class="version">
+    <text>版本号：1.0.0</text>
+  </view>
+  
+  <!-- 退出登录 -->
+  <button wx:if="{{isLogin}}" class="btn-logout" bindtap="logout">退出登录</button>
+  <button wx:else class="btn-login" bindtap="login">微信登录</button>
+</view>

@@ -1,0 +1,17 @@
+<view class="container">
+  <view class="card">
+    <text class="title">意见反馈</text>
+    <textarea 
+      class="textarea" 
+      placeholder="请输入您的意见或建议" 
+      bindinput="bindContentInput"
+      value="{{content}}"
+    ></textarea>
+    <view class="anonymous">
+      <checkbox value="anonymous" checked="{{anonymous}}" bindchange="bindAnonymousChange">
+        <text>匿名反馈</text>
+      </checkbox>
+    </view>
+    <button class="btn-primary" bindtap="submitFeedback">提交反馈</button>
+  </view>
+</view>

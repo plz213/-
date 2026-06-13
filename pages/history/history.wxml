@@ -1,0 +1,116 @@
+<view class="container">
+  <!-- 未登录提示 -->
+  <view class="login-tip" wx:if="{{!isLogin}}">
+    <text class="tip-text">登录后查看</text>
+  </view>
+  
+  <!-- 标签切换 -->
+  <view class="tab-bar" wx:if="{{isLogin}}">
+    <view class="tab-item {{activeTab === 'favorite' ? 'active' : ''}}" bindtap="switchTab" data-tab="favorite">
+      <text>我的收藏</text>
+    </view>
+    <view class="tab-item {{activeTab === 'history' ? 'active' : ''}}" bindtap="switchTab" data-tab="history">
+      <text>最近吃过</text>
+    </view>
+  </view>
+  
+  <!-- 添加菜品按钮 -->
+  <view class="add-btn-container" wx:if="{{isLogin && activeTab === 'favorite'}}">
+    <button class="btn-add" bindtap="showAddModal">
+      <text class="add-icon">+</text>
+      <text>添加菜品</text>
+    </button>
+  </view>
+  
+  <!-- 收藏列表 -->
+  <view wx:if="{{isLogin && activeTab === 'favorite'}}">
+    <view class="card" wx:for="{{favoriteList}}" wx:key="index">
+      <view class="food-item">
+        <image class="food-image" src="{{item.pic}}" mode="aspectFill"></image>
+        <view class="food-info">
+          <text class="food-name">{{item.name}}</text>
+          <text class="food-detail">{{item.method}}</text>
+        </view>
+        <button class="btn-delete" bindtap="cancelFavorite" data-index="{{index}}">取消收藏</button>
+      </view>
+    </view>
+    <view class="empty" wx:if="{{favoriteList.length === 0}}">
+      <text>暂无收藏菜品</text>
+    </view>
+  </view>
+  
+  <!-- 最近吃过 -->
+  <view wx:if="{{activeTab === 'history'}}">
+    <view class="card" wx:for="{{historyList}}" wx:key="index">
+      <view class="food-item">
+        <view class="food-info">
+          <text class="food-name">{{item.name}}</text>
+          <text class="food-time">{{item.viewTime}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="empty" wx:if="{{historyList.length === 0}}">
+      <text>暂无历史记录</text>
+    </view>
+  </view>
+  
+  <!-- 添加菜品弹窗 -->
+  <view class="modal" wx:if="{{showAddModal}}" bindtap="hideAddModal">
+    <view class="modal-content" catchtap="stopPropagation">
+      <view class="modal-header">
+        <text class="modal-title">添加菜品</text>
+        <text class="modal-close" bindtap="hideAddModal">×</text>
+      </view>
+      
+      <view class="modal-body">
+        <!-- 菜品名称 -->
+        <view class="form-item">
+          <text class="form-label">菜品名称</text>
+          <input class="form-input" placeholder="请输入菜品名称" value="{{newFood.name}}" bindinput="onNameInput" />
+        </view>
+        
+        <!-- 图片上传 -->
+        <view class="form-item">
+          <text class="form-label">菜品图片</text>
+          <view class="image-upload">
+            <image wx:if="{{newFood.pic}}" class="uploaded-image" src="{{newFood.pic}}" mode="aspectFill"></image>
+            <button wx:else class="upload-btn" bindtap="chooseImage">选择图片</button>
+          </view>
+        </view>
+        
+        <!-- 筛选条件 -->
+        <view class="form-item">
+          <text class="form-label">主食类型</text>
+          <picker bindchange="onStapleChange" value="{{newFood.stapleIndex}}" range="{{stapleOptions}}">
+            <view class="picker-text">
+              {{stapleOptions[newFood.stapleIndex]}}
+            </view>
+          </picker>
+        </view>
+        
+        <view class="form-item">
+          <text class="form-label">食材</text>
+          <picker bindchange="onIngredientChange" value="{{newFood.ingredientIndex}}" range="{{ingredientOptions}}">
+            <view class="picker-text">
+              {{ingredientOptions[newFood.ingredientIndex]}}
+            </view>
+          </picker>
+        </view>
+        
+        <view class="form-item">
+          <text class="form-label">做法</text>
+          <picker bindchange="onMethodChange" value="{{newFood.methodIndex}}" range="{{methodOptions}}">
+            <view class="picker-text">
+              {{methodOptions[newFood.methodIndex]}}
+            </view>
+          </picker>
+        </view>
+      </view>
+      
+      <view class="modal-footer">
+        <button class="btn-cancel" bindtap="hideAddModal">取消</button>
+        <button class="btn-confirm" bindtap="addFood">确认添加</button>
+      </view>
+    </view>
+  </view>
+</view>
